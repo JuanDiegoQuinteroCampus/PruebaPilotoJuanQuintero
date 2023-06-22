@@ -40,7 +40,7 @@ function autoload($class)
 }
 spl_autoload_register('autoload');
 
-/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAcademicArea(); */
-/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAcademicArea(); */
-admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->putAcademicArea();
-/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->postAcademicArea(); */
+areas::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAreas();
+/* areas::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAreas(); */
+/* areas::getInstance(json_decode(file_get_contents("php://input"), true))->putAreas(); */
+/* areas::getInstance(json_decode(file_get_contents("php://input"), true))->postAreas(); */
