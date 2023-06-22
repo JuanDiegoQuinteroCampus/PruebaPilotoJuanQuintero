@@ -16,12 +16,15 @@ trait getInstance
 }
 function autoload($class)
 {
-    // Directorios donde buscar archivos de clases
-    $directories = [
-        dirname(__DIR__) . '/scripts/academic_area/',
-        dirname(__DIR__) . '/scripts/admin_area/',
-        dirname(__DIR__) . '/scripts/db/'
-    ];
+    $directories = array();
+    $directorio = dirname(__DIR__) . '/scripts';
+    $elementos = scandir($directorio);
+    foreach ($elementos as $elemento) {
+        $rutaElemento = $directorio.'/'.$elemento.'/';
+        if(is_dir($rutaElemento)&& $elemento != '.' && $elemento != '..'){
+            $directories[]=$rutaElemento;
+        }
+    }
     // Convertir el nombre de la clase en un nombre de archivo relativo
     $classFile = str_replace('\\', '/', $class) . '.php';
 
@@ -37,5 +40,7 @@ function autoload($class)
 }
 spl_autoload_register('autoload');
 
-academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->putAcademicArea();
-/* academicarea::getInstance(json_decode(file_get_contents("php://input"), true))->postAcademicArea(); */
+/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAcademicArea(); */
+academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAcademicArea();
+/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->putAcademicArea(); */
+/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->postAcademicArea(); */
