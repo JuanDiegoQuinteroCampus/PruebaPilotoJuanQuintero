@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `academic_area`
 --
-
+USE campusland;
+SELECT * FROM academic_area;
 CREATE TABLE `academic_area` (
   `id` int NOT NULL,
   `id_area` int NOT NULL,
