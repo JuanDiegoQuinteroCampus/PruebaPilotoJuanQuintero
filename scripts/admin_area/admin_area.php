@@ -12,7 +12,7 @@ class admin_area extends connect
         parent::__construct();
         
     }
-    public function postAcademicArea()
+    public function postAdminArea()
     {
         try {
             $res = $this->conx->prepare($this->queryPost);
@@ -29,7 +29,7 @@ class admin_area extends connect
             print_r($this->message);
         }
     }
-    public function getAllAcademicArea()
+    public function getAllAdminArea()
     {
         try {
             $res = $this->conx->prepare($this->queryGetAll);
@@ -46,7 +46,7 @@ class admin_area extends connect
             print_r($this->message);
         }
     }
-    public function putAcademicArea()
+    public function putAdminArea()
 {
     try {
         $res = $this->conx->prepare($this->queryUpdate);
@@ -70,7 +70,7 @@ class admin_area extends connect
     }
 }
 
-    public function deleteAcademicArea()
+    public function deleteAdminArea()
     {
         try {
             $res = $this->conx->prepare($this->queryDelete);
