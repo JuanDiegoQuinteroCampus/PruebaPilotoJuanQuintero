@@ -32,7 +32,7 @@ function autoload($class)
     foreach ($directories as $directory) {
         $file = $directory . $classFile;
         // Verificar si el archivo existe y cargarlo
-        if (file_exists($file)) {
+        if (file_exists($file)) {   
             require $file;
             break;
         }
@@ -40,7 +40,7 @@ function autoload($class)
 }
 spl_autoload_register('autoload');
 
-/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAcademicArea(); */
-academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAcademicArea();
-/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->putAcademicArea(); */
-/* academic_area::getInstance(json_decode(file_get_contents("php://input"), true))->postAcademicArea(); */
+/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAcademicArea(); */
+/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAcademicArea(); */
+admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->putAcademicArea();
+/* admin_area::getInstance(json_decode(file_get_contents("php://input"), true))->postAcademicArea(); */
