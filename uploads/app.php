@@ -40,7 +40,7 @@ function autoload($class)
 }
 spl_autoload_register('autoload');
 
-areas::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAreas();
-/* areas::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAreas(); */
+/* campers::getInstance(json_decode(file_get_contents("php://input"), true))->deleteAreas(); */
+campers::getInstance(json_decode(file_get_contents("php://input"), true))->getAllCampers();
 /* areas::getInstance(json_decode(file_get_contents("php://input"), true))->putAreas(); */
-/* areas::getInstance(json_decode(file_get_contents("php://input"), true))->postAreas(); */
+campers::getInstance(json_decode(file_get_contents("php://input"), true))->postCampers();
