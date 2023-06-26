@@ -7,7 +7,7 @@ class admin_area extends connect
     private $queryDelete = 'DELETE FROM admin_area WHERE id = :num';
     private $message;
     use getInstance;
-    function __construct(public $id, public $id_area, private $id_staff, private $id_position, private $id_journey)
+    function __construct(private $id, private $id_area, private $id_staff, private $id_position, private $id_journey)
     {
         parent::__construct();
         

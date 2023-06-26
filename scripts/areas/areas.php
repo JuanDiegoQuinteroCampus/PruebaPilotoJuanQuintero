@@ -7,7 +7,7 @@ class areas extends connect
     private $queryDelete = 'DELETE FROM areas WHERE id = :num';
     private $message;
     use getInstance;
-    function __construct(public $id="1", public $name_area="1")
+    function __construct(private $id=1, public $name_area=1)
     {
         parent::__construct();
         
